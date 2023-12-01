@@ -3933,3 +3933,96 @@ Processing by AdsController#index as HTML
 Completed 200 OK in 23ms (Views: 22.4ms | ActiveRecord: 0.3ms | Allocations: 2309)
 
 
+Started GET "/" for 127.0.0.1 at 2023-12-01 11:59:47 -0500
+  [1m[36mActiveRecord::SchemaMigration Pluck (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /usr/share/rvm/gems/ruby-3.0.2/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /usr/share/rvm/gems/ruby-3.0.2/gems/railties-7.0.8/lib/rails/templates/rails/welcome/index.html.erb (Duration: 16.9ms | Allocations: 931)
+Completed 200 OK in 96ms (Views: 28.6ms | ActiveRecord: 0.0ms | Allocations: 10026)
+
+
+Started GET "/ads" for 127.0.0.1 at 2023-12-01 11:59:54 -0500
+Processing by AdsController#index as HTML
+  Rendering layout layouts/ads.html.erb
+  Rendering ads/index.html.erb within layouts/ads
+  [1m[36mAd Load (0.3ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/views/ads/index.html.erb:3
+  Rendered ads/index.html.erb within layouts/ads (Duration: 49.5ms | Allocations: 19596)
+  Rendered layout layouts/ads.html.erb (Duration: 743.3ms | Allocations: 102897)
+Completed 200 OK in 764ms (Views: 750.5ms | ActiveRecord: 0.9ms | Allocations: 104977)
+
+
+Started GET "/ads" for 127.0.0.1 at 2023-12-01 12:00:35 -0500
+Processing by AdsController#index as HTML
+  Rendering layout layouts/ads.html.erb
+  Rendering ads/index.html.erb within layouts/ads
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/views/ads/index.html.erb:3
+  Rendered ads/index.html.erb within layouts/ads (Duration: 16.1ms | Allocations: 4148)
+  Rendered layout layouts/ads.html.erb (Duration: 25.0ms | Allocations: 5163)
+Completed 200 OK in 33ms (Views: 25.6ms | ActiveRecord: 1.2ms | Allocations: 6774)
+
+
+Started GET "/ads/45/delete" for 127.0.0.1 at 2023-12-01 12:00:40 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/ads/45/delete"):
+  
+Started GET "/ads" for 127.0.0.1 at 2023-12-01 12:03:17 -0500
+Processing by AdsController#index as HTML
+  Rendering layout layouts/ads.html.erb
+  Rendering ads/index.html.erb within layouts/ads
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/views/ads/index.html.erb:3
+  Rendered ads/index.html.erb within layouts/ads (Duration: 15.7ms | Allocations: 6506)
+  Rendered layout layouts/ads.html.erb (Duration: 20.3ms | Allocations: 7730)
+Completed 200 OK in 24ms (Views: 20.6ms | ActiveRecord: 1.0ms | Allocations: 9688)
+
+
+Started POST "/ads/45/delete" for 127.0.0.1 at 2023-12-01 12:03:23 -0500
+  
+ActionController::RoutingError (No route matches [POST] "/ads/45/delete"):
+  
+Started GET "/ads" for 127.0.0.1 at 2023-12-01 12:04:27 -0500
+Processing by AdsController#index as HTML
+  Rendering layout layouts/ads.html.erb
+  Rendering ads/index.html.erb within layouts/ads
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/views/ads/index.html.erb:3
+  Rendered ads/index.html.erb within layouts/ads (Duration: 23.2ms | Allocations: 4240)
+  Rendered layout layouts/ads.html.erb (Duration: 30.9ms | Allocations: 5466)
+Completed 200 OK in 41ms (Views: 39.3ms | ActiveRecord: 0.2ms | Allocations: 6591)
+
+
+Started DELETE "/ads/45/delete" for 127.0.0.1 at 2023-12-01 12:04:28 -0500
+Processing by AdsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"45"}
+Filter chain halted as :check_logged_in rendered or redirected
+Completed 401 Unauthorized in 10ms (ActiveRecord: 0.0ms | Allocations: 428)
+
+
+Started DELETE "/ads/45/delete" for 127.0.0.1 at 2023-12-01 12:04:38 -0500
+Processing by AdsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "id"=>"45"}
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads" WHERE "ads"."id" = ? LIMIT ?[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/ads_controller.rb:34:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/ads_controller.rb:35:in `destroy'
+  [1m[36mAd Destroy (0.3ms)[0m  [1m[31mDELETE FROM "ads" WHERE "ads"."id" = ?[0m  [["id", 45]]
+  ↳ app/controllers/ads_controller.rb:35:in `destroy'
+  [1m[36mTRANSACTION (15.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/ads_controller.rb:35:in `destroy'
+Redirected to http://127.0.0.1:3000/ads/
+Completed 302 Found in 81ms (ActiveRecord: 15.6ms | Allocations: 6575)
+
+
+Started GET "/ads/" for 127.0.0.1 at 2023-12-01 12:04:38 -0500
+Processing by AdsController#index as HTML
+  Rendering layout layouts/ads.html.erb
+  Rendering ads/index.html.erb within layouts/ads
+  [1m[36mAd Load (0.2ms)[0m  [1m[34mSELECT "ads".* FROM "ads"[0m
+  ↳ app/views/ads/index.html.erb:3
+  Rendered ads/index.html.erb within layouts/ads (Duration: 20.0ms | Allocations: 3546)
+  Rendered layout layouts/ads.html.erb (Duration: 37.1ms | Allocations: 4669)
+Completed 200 OK in 54ms (Views: 48.5ms | ActiveRecord: 0.2ms | Allocations: 5020)
+
+

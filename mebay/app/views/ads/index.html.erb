@@ -3,7 +3,8 @@
 <% for ad in @ads %>
   <li><a href="/ads/<%= ad.id %>"><%= ad.name %></a>
   <!--[<a href="/ads/<%= ad.id %>/delete">Delete</a>]-->
-  [<%= link_to "Delete", "/ads/#{ad.id}/delete", method: :delete %>]
+  <!--[<%= link_to "Delete", "/ads/#{ad.id}/delete", method: :delete %>]-->
+  <%= button_to "Delete", delete_path(ad), method:"delete" %>
   </li>
 <% end %>
 </ul>

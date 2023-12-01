@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   post '/ads/create', to: 'ads#create'
   get '/ads/:id/edit', to: 'ads#edit'
   put '/ads/:id/update', to: 'ads#update'
-  get '/ads/:id/delete', to: 'ads#destroy' # delete method
+  delete'/ads/:id/delete', to: 'ads#destroy', as: 'delete'
   get '/ads/:id', to: 'ads#show'
   get '/ads/', to: 'ads#index'
 
