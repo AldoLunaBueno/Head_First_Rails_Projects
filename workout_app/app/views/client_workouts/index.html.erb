@@ -1,0 +1,28 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Client workouts</h1>
+
+<div id="client_workouts">
+  <table>
+    <tr>
+      <th>Client name</th>
+      <th>Trainer</th>
+      <th>Duration mins</th>
+      <th>Date of workout</th>
+      <th>Paid amount</th>
+      <th></th>
+    </tr>
+    <% @client_workouts.each do |cw| %>
+      <tr>
+        <td><%= cw.client_name %></td>
+        <td><%= cw.trainer %></td>
+        <td><%= cw.duration_mins %></td>
+        <td><%= cw.date_of_workout %></td>
+        <td><%= cw.paid_amount %></td>
+        <td><%= link_to "Show", client_workout_path(cw) %> <%= link_to "Edit", edit_client_workout_path(cw) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
+
+<%= link_to "New client workout", new_client_workout_path %>
