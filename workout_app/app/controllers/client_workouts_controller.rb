@@ -2,6 +2,7 @@ class ClientWorkoutsController < ApplicationController
   before_action :set_client_workout, only: %i[ show edit update destroy ]
 
   # GET /client_workouts or /client_workouts.json
+  
   def index
     @client_workouts = ClientWorkout.all
   end
@@ -46,6 +47,14 @@ class ClientWorkoutsController < ApplicationController
       end
     end
   end
+  
+  def find
+    #@client_workouts = ClientWorkout.where(client_name: params[:search_string])
+    #  .or(ClientWorkout.where(trainer: params[:search_string]))
+    search = params[:search_string]
+    @client_workouts = ClientWorkout.where("client_name = ? OR trainer = ?", search, search)
+  end
+
 
   # DELETE /client_workouts/1 or /client_workouts/1.json
   def destroy
