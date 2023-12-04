@@ -1,0 +1,17 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  id: 1
+  departure: 2023-12-02 22:06:42
+  arrival: 2023-12-02 22:06:42
+  destination: MyString
+  baggage_allowance: 9.99
+  capacity: 1
+
+two:
+  id: 1
+  departure: 2023-12-02 22:06:42
+  arrival: 2023-12-02 22:06:42
+  destination: MyString
+  baggage_allowance: 9.99
+  capacity: 1
